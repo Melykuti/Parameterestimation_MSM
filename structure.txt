@@ -1,0 +1,153 @@
+Parameter estimation of seeding and contamination rates on a triangular lattice using the method of simulated moments (MSM), code for a MATLAB implementation.
+
+
+
+Background:
+Felix Beck, Bence Mélykúti.
+Parameter estimation in a subcritical percolation model with colouring
+arXiv:1604.08908
+https://arxiv.org/abs/1604.08908
+
+
+
+Note: An additional MATLAB file must be downloaded!
+
+fminsearchbnd: 	fminsearchbnd behaves similarly to fminsearch, except you can add bound constraints.
+		source and description: http://de.mathworks.com/matlabcentral/fileexchange/8277-fminsearchbnd--fminsearchcon/content/FMINSEARCHBND/fminsearchbnd.m
+		author: John D'Errico
+
+
+
+Authors:
+Felix Beck, Bence Melykuti (University of Freiburg, Germany)
+2015-2017
+
+
+
+Code structure:
+
+msm
+	createsynthdata_determ
+	createsynthdata_random_m2 (needed for method 2 only)
+	simcalcs
+	fminsearchbnd
+		optim
+			simulation_m1/simulation_m2
+				contamination
+			simcalcs
+
+createsynthdata
+	createsynthdata_determ
+	createsynthdata_random_m2 (needed for method 2 only)
+	simulation_m1/simulation_m2
+
+plot_figure
+	plot_preprocessing
+	plot_panel
+		plot_wells
+			plot_colorshift
+		plot_edges
+
+latex_table
+	latex_table_header
+	latex_table_footer
+		latex_finddataset
+		plot_preprocessing
+		createsynthdata_determ
+	latex_block
+		latex_finddataset
+		latex_findestimate
+
+latex_table5
+	latex_table_header
+	latex_table_footer
+	latex_block
+		latex_blockrow
+			latex_finddataset
+			latex_findestimate
+			plot_preprocessing
+			createsynthdata_determ
+			simcalcs
+			createsynthdata_random_m2
+			optim
+				simulation_m1/simulation_m2
+					contamination
+				simcalcs
+
+latex_table6
+	latex_table_header
+	latex_table_footer
+	latex_row
+		latex_finddataset
+		plot_preprocessing
+		createsynthdata_determ
+		simcalcs
+		createsynthdata_random_m2
+		optim_norma
+			simulation_m1/simulation_m2
+				contamination
+			simcalcs
+
+(latex_table.m, latex_table5.m, latex_table6.m contain some of their functions as well, such as latex_table_header, latex_table_footer, latex_block, latex_blockrow, latex_row. Those are not separate files.)
+
+---
+
+msm.m	
+
+Inputs:				simstep_max, loops, mu_max, method
+Outputs:			[solutions, result, experiment_matrix]
+Variables saved (optionally):	'estimators', 'time', 'errors', 'input_values', 'optimizations'
+Displays:			optimizations, absd, result{2}
+
+---
+
+createsynthdata.m
+
+Inputs:
+nrows, ncols, simstep_max, shape, lambda, mu, method
+
+Outputs:
+ncolors, wells_before_contamination, wells_after_contamination, open_edges, experiment_edgelist, max_vertices, max_edges, originalrows, shiftedrows, true_values, totalvertices, totaledgelocations
+
+Variables saved (optionally):
+        'nrows', 'ncols', 'ncolors', 'simstep_max', 'shape',...
+        'wells_before_contamination', 'wells_after_contamination',...
+        'open_edges', 'experiment_edgelist', 'max_vertices', 'max_edges',...
+        'originalrows', 'shiftedrows', 'lambda', 'mu', 'method',...
+        'true_values', 'totalvertices', 'totaledgelocations');
+
+Felix Beck's synthetic data files contain:
+wells_before_contamination, wells_after_contamination, open_edges, max_edges, shape, true_values
+
+---
+
+Goals with plotting:
+
+Figure 1: process explained on 4 panels:
+1 seeding
+2 edges with the lattice
+3 seeding overlaid on top of edges
+4 observation without edges, with mixed colours
+
+Figure 3: comparison of two experimental images
+a few seeds, little-to-no contamination
+b more seeds, more contamination
+
+Input: wells before contamination, wells after contamination, edges, originalrows, shiftedrows
+needs a function (plotwells.m) to be called to draw one panel
+
+further functions to be called in arbitrary order for drawing
+a all edges
+b all wells
+
+use cases for wells:
+0 lattice vertices: tiny thin white outlines with black interior for vertices
+1 seeded wells: balls of colour with identical outline
+2 thin white outlines with black interior for empty wells and balls of color with identical outline for seeded wells
+
+use cases:
+Fig 1, 1&4: wells of type c, (no edges)
+Fig 1, 2: wells of type 0 on top of edges
+Fig 1, 3: wells of type 2 on top of edges
+Fig 3: wells of type 1, (no edges)
+
