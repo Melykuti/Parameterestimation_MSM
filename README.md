@@ -1,5 +1,5 @@
 # Parameterestimation_MSM
-Parameter estimation of seeding and contamination rates on a triangular lattice using the method of simulated moments (MSM). Code implementation in Matlab (The MathWorks, Inc.).
+Parameter estimation of seeding and contamination rates in a subcritical percolation model on a triangular lattice using the method of simulated moments (MSM). Code implementation in Matlab (The MathWorks, Inc.).
 
 Background:
 Felix Beck, Bence Mélykúti.
@@ -22,3 +22,4 @@ Felix Beck, Bence Melykuti (University of Freiburg, Germany)
 
 msm.m is the main file to be run for parameter estimation, with comments about variables and input requirements.
 structure.txt describes the interrelation of program files.
+
