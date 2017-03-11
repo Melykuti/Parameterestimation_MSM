@@ -109,8 +109,8 @@ end
 
 
 function filename=latex_finddataset(n)
-filepath='../';
-%filepath='Synthetic_datasets_for_estimation/';
+%filepath='../';
+filepath='Synthetic_datasets_for_estimation/';
 
 switch n
 case 1
@@ -128,8 +128,8 @@ end
 
 
 function filename=latex_findestimate(n, k, method)
-filepath='Data/';
-%filepath='Data_estimates/';
+%filepath='Data/';
+filepath='Data_estimates/';
 
 switch n
 case 1

@@ -113,7 +113,7 @@ case 5
 filename='661x661.mat';
 end
 %}
-filepath='../Data/';
+filepath='Synthetic_datasets_for_estimation/';
 switch n
 case 1
 filename='25x25_testdata_m1.mat';

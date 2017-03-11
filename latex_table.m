@@ -166,7 +166,7 @@ end
 
 
 function filename=latex_finddataset(n)
-filepath='../Synthetic_datasets_for_estimation/';
+filepath='Synthetic_datasets_for_estimation/';
 switch n
 case 1
 filename='25x25.mat';
