@@ -30,5 +30,5 @@ fminsearchbnd:
 * The **Mathematica** folder has a Mathematica (Wolfram Research, Inc.) notebook for calculations in Section 7 of the paper.
 * The **Densityestimation** folder contains:
  * **densityestimation.m**, which estimates the empirical means of the densities of coloured vertices and of adjacent pairs of coloured vertices as a function of lambda (seeding rate) and mu (percolation parameter), for a mesh of lambda and mu pairs, when the number of colours is 1.
- * **data_visualise.m** displays the result of densityestimation.m in several plots.
+ * **data_visualise.m** displays the result of densityestimation.m saved in **dataset_A.mat** and **dataset_B.mat** in several plots.
  * **data_visualise_publication.m** creates the figures that are presented in the Appendix of the paper (arXiv:1604.08908v3).
