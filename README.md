@@ -26,6 +26,7 @@ fminsearchbnd:
 * **latex_table.m**, **latex_table5.m** and **latex_table6.m** created Tables 1-4, Table 5 and Table 6 of the paper in LaTeX format.
 * **structure.txt** describes the interrelation of program files.
 * The **Synthetic\_datasets\_for\_estimation** folder contains our standard synthetic datasets with known parameter values that can be used to test parameter estimation.
+* The **Synthetic\_datasets\_for\_plotting** folder contains our synthetic datasets that were used to create Figures 1 and 3 of the paper.
 * The **Data\_estimates** folder contains results of parameter estimation. These results are reported in Section 6 of the paper.
 * The **Mathematica** folder has a Mathematica (Wolfram Research, Inc.) notebook for calculations in Section 7 of the paper.
 * The **Densityestimation** folder contains:
