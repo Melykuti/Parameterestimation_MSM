@@ -3,15 +3,17 @@ Parameter estimation of seeding and contamination rates in a subcritical percola
 
 #### Authors
 Felix Beck, Bence Mélykúti (University of Freiburg, Germany).  
-2015-2017
+2015-2017  
+
+With questions or comments, please contact [Bence Mélykúti](https://github.com/Melykuti).
 
 #### Reference
 Felix Beck, Bence Mélykúti.  
-_Parameter estimation in a subcritical percolation model with colouring_  
+_Parameter estimation in a subcritical percolation model with colouring_,  
 arXiv:1604.08908  
 [https://arxiv.org/abs/1604.08908](https://arxiv.org/abs/1604.08908)
 
-#### Note
+#### Dependencies
 An additional MATLAB file must be downloaded!
 
 fminsearchbnd:
@@ -33,3 +35,8 @@ fminsearchbnd:
  * **densityestimation.m**, which estimates the empirical means of the densities of coloured vertices and of adjacent pairs of coloured vertices as a function of lambda (seeding rate) and mu (percolation parameter), for a mesh of lambda and mu pairs, when the number of colours is 1.
  * **data_visualise.m** displays the result of densityestimation.m saved in **dataset_A.mat** and **dataset_B.mat** in several plots.
  * **data_visualise_publication.m** creates the figures that are presented in the Appendix of the paper (arXiv:1604.08908v3).
+
+#### License
+The software in the repository _Melykuti/Parameterestimation\_MSM_ is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License](http://rawgit.com/Melykuti/Parameterestimation_MSM/master/LICENSE.html). For commercial licensing, please contact [Bence Mélykúti](https://github.com/Melykuti).
+
+Copyright (c) 2017, Felix Beck, Bence Mélykúti 
