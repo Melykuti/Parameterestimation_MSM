@@ -1,8 +1,8 @@
-Parameter estimation of seeding and contamination rates on a triangular lattice using the method of simulated moments (MSM), code for a MATLAB implementation.
+Parameter estimation of seeding and contamination rates in a subcritical percolation model on a triangular lattice using the method of simulated moments (MSM). Code implementation in Matlab (The MathWorks, Inc.).
 
 
 
-Background:
+Reference:
 Felix Beck, Bence Mélykúti.
 Parameter estimation in a subcritical percolation model with colouring
 arXiv:1604.08908
@@ -10,7 +10,8 @@ https://arxiv.org/abs/1604.08908
 
 
 
-Note: An additional MATLAB file must be downloaded!
+Dependencies:
+An additional MATLAB file must be downloaded!
 
 fminsearchbnd: 	fminsearchbnd behaves similarly to fminsearch, except you can add bound constraints.
 		source and description: http://de.mathworks.com/matlabcentral/fileexchange/8277-fminsearchbnd--fminsearchcon/content/FMINSEARCHBND/fminsearchbnd.m
@@ -142,11 +143,11 @@ b all wells
 
 use cases for wells:
 0 lattice vertices: tiny thin white outlines with black interior for vertices
-1 seeded wells: balls of colour with identical outline
-2 thin white outlines with black interior for empty wells and balls of color with identical outline for seeded wells
+1 non-empty wells: balls of colour with identical outline
+2 thin white outlines with black interior for empty wells and balls of color with identical outline for non-empty wells
 
 use cases:
-Fig 1, 1&4: wells of type c, (no edges)
+Fig 1, 1&4: wells of type 2, (no edges)
 Fig 1, 2: wells of type 0 on top of edges
 Fig 1, 3: wells of type 2 on top of edges
 Fig 3: wells of type 1, (no edges)
